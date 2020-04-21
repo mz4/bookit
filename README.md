@@ -1,2 +1,0 @@
-# bookit
-Created with CodeSandbox
