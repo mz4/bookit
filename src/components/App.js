@@ -1,21 +1,21 @@
 import React from "react";
 import Container from "./Container";
-import TodoCreate from "./TodoCreate";
-import TodoUpdate from "./TodoUpdate";
-import TodoList from "./TodoList";
+import BookmarkCreate from "./BookmarkCreate";
+import BookmarkUpdate from "./BookmarkUpdate";
+import BookmarkList from "./BookmarkList";
 import { HashRouter, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <HashRouter>
       <Container>
-        <Route exact path="/" component={TodoList} />
-        <Route exact path="/todos/new" component={TodoCreate} />
+        <Route exact path="/" component={BookmarkList} />
+        <Route exact path="/bookmarks/new" component={BookmarkCreate} />
         <Route
           exact
-          path="/todo/:id"
+          path="/bookmark/:id"
           render={props => {
-            return <TodoUpdate todo={{ id: props.match.params.id }} />;
+            return <BookmarkUpdate bookmark={{ id: props.match.params.id }} />;
           }}
         />
       </Container>

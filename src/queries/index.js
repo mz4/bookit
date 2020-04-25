@@ -1,17 +1,17 @@
 import gql from "graphql-tag";
 
-const ADD_TODO = gql`
-  mutation AddTodo($content: String!) {
-    addTodo(content: $content) {
+const ADD_BOOKMARK = gql`
+  mutation AddBookmark($content: String!) {
+    addBookmark(content: $content) {
       id
       content
     }
   }
 `;
 
-const GET_TODOS = gql`
+const GET_BOOKMARKS = gql`
   {
-    todos {
+    bookmarks {
       id
       content
       likes
@@ -19,17 +19,17 @@ const GET_TODOS = gql`
   }
 `;
 
-const DELETE_TODO = gql`
-  mutation DeleteTodo($ID: ID) {
-    deleteTodo(id: $ID) {
+const DELETE_BOOKMARK = gql`
+  mutation DeleteBookmark($ID: ID) {
+    deleteBookmark(id: $ID) {
       id
     }
   }
 `;
 
-const GET_TODO = gql`
-  query Todo($id: ID!) {
-    todo(id: $id) {
+const GET_BOOKMARK = gql`
+  query Bookmark($id: ID!) {
+    bookmark(id: $id) {
       id
       content
       likes
@@ -37,21 +37,21 @@ const GET_TODO = gql`
   }
 `;
 
-const TODO_LIKE = gql`
-  mutation TodoLike($id: ID) {
-    likeTodo(id: $id) {
+const BOOKMARK_LIKE = gql`
+  mutation BookmarkLike($id: ID) {
+    likeBookmark(id: $id) {
       id
       likes
     }
   }
 `;
 
-const UPDATE_TODO = gql`
-  mutation UpdateTodo($id: ID!, $content: String!) {
-    updateTodo(id: $id, content: $content) {
+const UPDATE_BOOKMARK = gql`
+  mutation UpdateBookmark($id: ID!, $content: String!) {
+    updateBookmark(id: $id, content: $content) {
       id
     }
   }
 `;
 
-export { TODO_LIKE, GET_TODO, DELETE_TODO, GET_TODOS, ADD_TODO, UPDATE_TODO };
+export { BOOKMARK_LIKE, GET_BOOKMARK, DELETE_BOOKMARK, GET_BOOKMARKS, ADD_BOOKMARK, UPDATE_BOOKMARK };
