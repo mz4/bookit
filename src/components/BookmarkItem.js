@@ -2,13 +2,17 @@ import React from "react";
 import BookmarkDelete from "./BookmarkDelete";
 import BookmarkLike from "./BookmarkLike";
 
-const BookmarkItem = ({ id, likes, content, onUpdate }) => (
+const BookmarkItem = ({ id, likes, content, onUpdate, onVisit }) => (
   <div className="card">
     <header className="card-header">
-      <p className="card-header-title">Bookmark</p>
+      <p className="card-header-title">Bookmark {id.substring(0, 4)}</p>
     </header>
     <div className="card-content">
-      <div className="content">{content}</div>
+      <a href={content} target="_blank">
+        <div className="content">
+          {content}
+        </div>
+      </a>
     </div>
     <footer className="card-footer">
       <div className="card-footer-item">

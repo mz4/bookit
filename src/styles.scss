@@ -20,6 +20,12 @@
 }
 
 div {
+  &.card-content {
+    cursor: pointer;
+  }
+  &.card-content:hover {
+    background-color: rgba(60, 255, 0, 0.219);
+  }
   &.card-footer-item {
     cursor: pointer;
     display: flex;
@@ -32,7 +38,7 @@ div {
 }
 
 nav.level {
-  background-color: hsl(204, 86%, 53%);
+  background-color: rgb(31, 69, 153);
   ul {
     li {
       &.level-item {
@@ -57,12 +63,11 @@ nav.level {
 .cards {
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+  align-items: left;
   align-content: center;
-  justify-content: center;
+  justify-content: left;
   .card {
-    margin: 10px 10px 0 0;
-    min-width: 20%;
+    min-width: 25%;
     &:hover {
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
