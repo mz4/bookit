@@ -14,6 +14,7 @@ const cache = new InMemoryCache({
   dataIdFromObject: object => object.id || null
 });
 
+
 const client = new ApolloClient({
   cache,
   uri: URI
